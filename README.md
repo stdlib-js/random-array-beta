@@ -31,13 +31,18 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import beta from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-beta@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/random-array-beta/tags). For example,
+
+```javascript
 import beta from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-beta@v0.0.1-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-beta@v0.0.1-deno/mod.js';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-beta@deno/mod.js';
 ```
 
 #### beta( len, alpha, beta\[, options] )
@@ -304,7 +309,7 @@ var sz = random.byteLength;
 
 ```javascript
 import logEach from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@deno/mod.js';
-import beta from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-beta@v0.0.1-deno/mod.js';
+import beta from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-beta@deno/mod.js';
 
 // Create a function for generating random arrays originating from the same state:
 var random = beta.factory( 2.0, 5.0, {
