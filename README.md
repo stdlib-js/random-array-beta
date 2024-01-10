@@ -385,6 +385,13 @@ logEach( '%f', x4 );
 
 <section class="related">
 
+* * *
+
+## See Also
+
+-   <span class="package-name">[`@stdlib/random-base/beta`][@stdlib/random/base/beta]</span><span class="delimiter">: </span><span class="description">beta distributed pseudorandom numbers.</span>
+-   <span class="package-name">[`@stdlib/random-strided/beta`][@stdlib/random/strided/beta]</span><span class="delimiter">: </span><span class="description">fill a strided array with pseudorandom numbers drawn from a beta distribution.</span>
+
 </section>
 
 <!-- /.related -->
@@ -465,6 +472,12 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 [@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32
 
 [@stdlib/array/float64]: https://github.com/stdlib-js/array-float64
+
+<!-- <related-links> -->
+
+[@stdlib/random/strided/beta]: https://github.com/stdlib-js/random-strided-beta
+
+<!-- </related-links> -->
 
 </section>
 
