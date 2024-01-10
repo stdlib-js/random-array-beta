@@ -35,38 +35,30 @@ limitations under the License.
 
 > Create an array containing pseudorandom numbers drawn from a [beta][@stdlib/random/base/beta] distribution.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/random-array-beta
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-beta = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-beta@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var beta = require( 'path/to/vendor/umd/random-array-beta/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-beta@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.beta;
-})();
-</script>
+var beta = require( '@stdlib/random-array-beta' );
 ```
 
 #### beta( len, alpha, beta\[, options] )
@@ -100,6 +92,29 @@ var out = beta( 10, 2.0, 5.0, opts );
 // returns [...]
 ```
 
+#### beta.assign( alpha, beta, out )
+
+Fills an array with pseudorandom numbers drawn from a [beta][@stdlib/random/base/beta] distribution.
+
+```javascript
+var zeros = require( '@stdlib/array-zeros' );
+
+var x = zeros( 10, 'float64' );
+// returns <Float64Array>
+
+var out = beta.assign( 2.0, 5.0, x );
+// returns <Float64Array>
+
+var bool = ( out === x );
+// returns true
+```
+
+The function has the following parameters:
+
+-   **alpha**: first shape parameter.
+-   **beta**: second shape parameter.
+-   **out**: output array.
+
 #### beta.factory( \[alpha, beta, ]\[options] )
 
 Returns a function for creating arrays containing pseudorandom numbers drawn from a [beta][@stdlib/random/base/beta] distribution.
@@ -114,7 +129,7 @@ var len = out.length;
 // returns 10
 ```
 
-If provided `alpha` and `beta`, the returned generator returns random variates from the specified distribution.
+If provided distribution parameters, the returned generator returns random variates from the specified distribution.
 
 ```javascript
 var random = beta.factory( 2.0, 5.0 );
@@ -126,7 +141,7 @@ out = random( 10 );
 // returns <Float64Array>
 ```
 
-If not provided `alpha` and `beta`, the returned generator requires that both parameters be provided at each invocation.
+If not provided distribution parameters, the returned generator requires that distribution parameters be provided at each invocation.
 
 ```javascript
 var random = beta.factory();
@@ -331,14 +346,9 @@ var sz = random.byteLength;
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-beta@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var logEach = require( '@stdlib/console-log-each' );
+var beta = require( '@stdlib/random-array-beta' );
 
 // Create a function for generating random arrays originating from the same state:
 var random = beta.factory( 2.0, 5.0, {
@@ -365,11 +375,6 @@ var x4 = random( 15 );
 
 // Print the contents:
 logEach( '%f', x4 );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -379,13 +384,6 @@ logEach( '%f', x4 );
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
 <section class="related">
-
-* * *
-
-## See Also
-
--   <span class="package-name">[`@stdlib/random-base/beta`][@stdlib/random/base/beta]</span><span class="delimiter">: </span><span class="description">beta distributed pseudorandom numbers.</span>
--   <span class="package-name">[`@stdlib/random-strided/beta`][@stdlib/random/strided/beta]</span><span class="delimiter">: </span><span class="description">fill a strided array with pseudorandom numbers drawn from a beta distribution.</span>
 
 </section>
 
@@ -460,19 +458,13 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/random-array-beta/main/LICENSE
 
-[@stdlib/random/base/beta]: https://github.com/stdlib-js/random-base-beta/tree/umd
+[@stdlib/random/base/beta]: https://github.com/stdlib-js/random-base-beta
 
-[@stdlib/array/typed-real-float-dtypes]: https://github.com/stdlib-js/array-typed-real-float-dtypes/tree/umd
+[@stdlib/array/typed-real-float-dtypes]: https://github.com/stdlib-js/array-typed-real-float-dtypes
 
-[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32/tree/umd
+[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32
 
-[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64/tree/umd
-
-<!-- <related-links> -->
-
-[@stdlib/random/strided/beta]: https://github.com/stdlib-js/random-strided-beta/tree/umd
-
-<!-- </related-links> -->
+[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64
 
 </section>
 
