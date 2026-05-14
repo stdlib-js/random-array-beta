@@ -391,6 +391,7 @@ logEach( '%f', x4 );
 
 ## See Also
 
+-   <span class="package-name">[`@stdlib/random-beta`][@stdlib/random/beta]</span><span class="delimiter">: </span><span class="description">generate pseudorandom numbers drawn from a beta distribution.</span>
 -   <span class="package-name">[`@stdlib/random-base/beta`][@stdlib/random/base/beta]</span><span class="delimiter">: </span><span class="description">beta distributed pseudorandom numbers.</span>
 -   <span class="package-name">[`@stdlib/random-strided/beta`][@stdlib/random/strided/beta]</span><span class="delimiter">: </span><span class="description">fill a strided array with pseudorandom numbers drawn from a beta distribution.</span>
 
@@ -479,6 +480,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [@stdlib/array/float64]: https://github.com/stdlib-js/array-float64
 
 <!-- <related-links> -->
+
+[@stdlib/random/beta]: https://github.com/stdlib-js/random-beta
 
 [@stdlib/random/strided/beta]: https://github.com/stdlib-js/random-strided-beta
 
